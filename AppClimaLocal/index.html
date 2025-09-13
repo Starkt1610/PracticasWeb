@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>App de Clima Local</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="default">
+
+    <div class="card" role="region" aria-label="Panel de clima">
+        <div class="header">
+            <div>
+                <div class="location" id="location">Cargando ubicación...</div>
+                <div class="time" id="time">—</div>
+            </div>
+            <div id="refreshBtn" title="Actualizar" style="cursor:pointer"><i class="fas fa-sync"></i></div>
+        </div>
+
+        <div class="main">
+            <div class="icon" id="weatherIcon">☀️</div>
+            <div>
+                <div class="temp" id="temp">--°C</div>
+                <div class="desc" id="desc">—</div>
+            </div>
+        </div>
+
+        <div class="details">
+            <div class="detail">
+                <div id="feels">--°C</div>
+                <small>Sensación</small>
+            </div>
+            <div class="detail">
+                <div id="humidity">--%</div>
+                <small>Humedad</small>
+            </div>
+            <div class="detail">
+                <div id="wind">-- m/s</div>
+                <small>Viento</small>
+            </div>
+        </div>
+
+        <form id="searchForm" class="search" role="search">
+            <input id="cityInput" placeholder="Buscar ciudad" aria-label="Buscar ciudad" />
+            <button type="submit">Buscar</button>
+        </form>
+
+        <div id="message" class="msg" style="display:none"></div>
+
+        <p style="font-size:0.8rem;margin-top:10px;color:#3338">
+            Puedes buscar cualquier ciudad usando el buscador.
+        </p>
+    </div>
+
+    <!-- Contenedores para lluvia / nieve -->
+    <div class="rain" id="rain"></div>
+    <div class="snow" id="snow"></div>
+
+    <!-- Spinner overlay -->
+    <div class="overlay" id="overlay">
+        <div>
+            <div class="spinner"></div>
+            <div style="text-align:center;margin-top:8px;color:white">Cargando clima…</div>
+        </div>
+    </div>
+    
+
+    <!-- JS externo -->
+    <script src="app.js"></script>
+</body>
+</html>
